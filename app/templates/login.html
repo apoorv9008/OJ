@@ -1,0 +1,17 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Sign In</h1>
+  <form id="form" action="" method="post" name="login">
+      {{ form.hidden_tag() }}
+      <p>
+          Enter your ID:<br>
+          {{ form.openid(size=80) }}<br>
+          {% for error in form.openid.errors %}
+          	<p style="color:red"> {{error}} </p>
+          {% endfor %} <br>
+      </p>
+      <p><input type="submit" value="Sign In" name="sign-in-name"></p>
+  </form>
+{% endblock %}

@@ -1,0 +1,40 @@
+<html>
+<head>
+</head>
+<body>
+<form action="save.php" method="post">
+<textarea id="s" name="content" style="width:512px;height:512px"></textarea>
+<br />
+<input type="submit" value="Submit">
+<select name="ext">
+<option>c</option>
+<option>c++</option>
+<option>java</option>
+<option>python</option>
+</select>
+</form>
+<table>
+<tr>
+		<td>Select a File to Load:</td>
+		<td><input type="file" id="fileToLoad"></td>
+		<td><button onclick="loadFileAsText()">Load Selected File</button><td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+function loadFileAsText()
+{
+	var fileToLoad = document.getElementById("fileToLoad").files[0];
+
+	var fileReader = new FileReader();
+	fileReader.onload = function(fileLoadedEvent) 
+	{
+		var textFromFileLoaded = fileLoadedEvent.target.result;
+		document.getElementById("s").value = textFromFileLoaded;
+	};
+	fileReader.readAsText(fileToLoad, "UTF-8");
+}
+
+</script>
+</body>
+</html>

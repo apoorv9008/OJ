@@ -1,0 +1,228 @@
+
+body {
+	position: static;
+	background-image: url('img/bg.png');
+	color: #000305;
+	font-size: 87.5%; /* Base font size: 14px */
+	font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	line-height: 1.429;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	}
+	
+.body {
+	position: static;
+	clear: both; 
+	margin: 0 auto; 
+	width: 70%;
+}
+
+
+h2 {font-size: 1.571em}	/* 22px */
+h3 {font-size: 1.429em}	/* 20px */
+h4 {font-size: 1.286em}	/* 18px */
+h5 {font-size: 1.143em}	/* 16px */
+h6 {font-size: 1em}		/* 14px */
+
+h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	line-height: 1.1;
+	margin-bottom: .8em;
+}
+
+
+
+a {
+	outline: 0;
+	}
+
+a img {
+	border: 0px; 
+	width: 100%;
+	text-decoration: none;
+}
+
+
+
+.innercontent a {
+	text-decoration: none;
+	font-size: 1.1em;
+
+
+}
+
+
+
+/* ===========================
+   ===== Main Navigation ===== 
+   =========================== */
+   
+.mainHeader nav {
+	position: static;
+	background: #666;
+	font-size: 1.143em;
+	height: 40px;
+	line-height: 30px;
+	margin: 0 auto 30px auto;
+	text-align: center;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+	
+.mainHeader nav ul {
+	position: static;
+	list-style: none; 
+	margin: 0 auto;
+}
+
+.mainHeader nav ul li {
+	position: static;
+	float: left; 
+	display: inline; 
+}
+	
+.mainHeader nav a:link, .mainHeader nav a:visited {
+	position: static;
+	color: #fff;
+	display: inline-block;
+	height: 30px;
+	padding: 5px 23px;
+	text-decoration: none;
+}
+.mainHeader nav a:hover, .mainHeader nav a:active,
+.mainHeader nav .active a:link, .mainHeader nav .active a:visited {
+	position: static;
+	background: #CF5C3F;
+	color: #fff;
+	text-shadow: none !important;
+}
+	
+.mainHeader nav li a {
+	position: static;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.mainHeader img {
+	position: static;
+	width: 30%;
+	height: auto;
+	margin: 3% 0;
+}
+
+/* ===========================
+   ======= Content Area ====== 
+   =========================== */
+
+.mainContent {
+	position: static;
+	overflow: hidden;
+	line-height: 25px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.topcontent {
+	position: static;
+	background-color: #FFF;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	padding: 3% 5%;	
+	margin-bottom: 3%;
+}
+
+.bottomcontent {
+	position: static;
+	background-color: #FFF;	
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	padding: 3% 5%;
+}
+
+.content {
+	position: static;
+	width: 68%;
+	float: left;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+}
+
+.post-info {
+	position: static;
+	font-style: italic;
+	color: #999;
+	font-size: 85%;
+}
+
+/* ===========================
+   ======== Sidebar ========== 
+   =========================== */
+
+.recent-contest-ranks {
+	position: static;
+	width: 24%;
+	float: left;
+	margin-left: 2%;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	background-color: #FFF;	
+	padding: 2% 3%;
+	margin-bottom: 2%;
+}
+
+.all-time-rankings {
+	position: static;
+	width: 24%;
+	float: left;
+	margin-left: 2%;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	background-color: #FFF;	
+	padding: 2% 3%;
+	margin-bottom: 2%;
+}
+
+.your-profile {
+	position: static;
+	width: 24%;
+	float: left;
+	margin-left: 2%;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	background-color: #FFF;	
+	padding: 2% 3%;
+}
+
+/* ===========================
+   ========= Footer ========== 
+   =========================== */
+
+.mainFooter {
+	position: static;
+	width: 100%;
+	float: left;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	padding-left: 0;
+	background-color: #666;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	color: #FFF;	
+}
+
+.mainFooter p {
+	position: static;
+	width: 91%;
+	margin: 2% auto;
+}
