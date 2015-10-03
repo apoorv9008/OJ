@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>practice</title>
+  <style type="text/css">
+#flattable {
+  display: block;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 115%;
+  overflow: auto;
+  width: auto;}
+  
+  th {
+    background-color: rgb(112, 196, 105);
+    color: white;
+    font-weight: normal;
+    padding: 20px 30px;
+    text-align: center;
+  }
+  td {
+    background-color: rgb(238, 238, 238);
+    color: rgb(111, 111, 111);
+    padding: 20px 30px;
+  }
+    </style>
+</head>
+<body bgcolor="lightgrey">
+
+
+<table id="flattable">
+
+    <tr>
+      <th>serial no</th>
+      <th>Problem</th>
+      <th>code</th>
+      <th>submissions</th>
+      <th>difficulty</th>
+    </tr>
+    <tr>
+      <td>1.</td>
+      <td><a href="/ATM">ATM</td>
+      <td>at1</td>
+      <td>5</td>
+      <td>Easy</td>
+    </tr>
+     <tr>
+      <td>2.</td>
+      <td><a href="enormous.htm">enormous input test</td>
+      <td>intest</td>
+      <td>6</td>
+      <td>Easy</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td><a href="factorial.htm">factorial</td>
+      <td>factrl</td>
+      <td>9</td>
+      <td>Easy</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td><a href="tsort.htm">Turbo sort</td>
+      <td>tsort</td>
+      <td>4</td>
+      <td>Easy</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td><a href="crecp.htm">cutting Recipes</td>
+      <td>recipe</td>
+      <td>5</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <td>6.</td>
+      <td><a href="transform.htm">transform</td>
+      <td>onp</td>
+      <td>3</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <td>7.</td>
+      <td><a href="tlg.htm">the lead game</td>
+      <td>tlg</td>
+      <td>6</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <td>8.</td>
+      <td><a href="package.htm">packaging cup cakes</td>
+      <td>muffn</td>
+      <td>3</td>
+      <td>hard</td>
+    </tr>
+    <tr>
+      <td>9.</td>
+      <td><a href="sum.htm">sums in triangle</td>
+      <td>sint</td>
+      <td>2</td>
+      <td>hard</td>
+    </tr>
+    <tr>
+      <td>10.</td>
+      <td><a href="break.htm">break the code</td>
+      <td>btc</td>
+      <td>0</td>
+      <td>hard</td>
+    </tr>
+   
+   
+  
+  </table>
+  </body>
+  {% endblock %}
+</html>
