@@ -3,7 +3,7 @@ from app import app
 from flask import flash,redirect
 from .forms import LoginForm
 from flask import request
-import requests
+#import requests
 
 
 @app.route('/')
@@ -33,6 +33,23 @@ def problems():
 @app.route('/ATM')
 def ATM():
     return render_template("atm.html")
+
+"""@app.route('/submit')
+def submit():
+    return render_template("submit.html")
+"""
+
+@app.route('/submit')#,methods=['GET','POST'])
+def submit():
+    #print ("I got it!")
+    #print request.form['projectFilepath']
+    return render_template('submit.html')
+
+@app.route('/trying',methods=['POST'])
+def trying():
+    print ("I got it!")
+    print request.form['projectFilepath']
+    return render_template('trying.html')
 
 @app.route('/login',methods=['GET','POST'])
 def login():
