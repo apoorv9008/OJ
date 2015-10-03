@@ -25,6 +25,15 @@ def index():
                            user=user,
                            problems=problems)
 
+
+@app.route('/problems')
+def problems():
+    return render_template("problems.html")
+
+@app.route('/ATM')
+def ATM():
+    return render_template("atm.html")
+
 @app.route('/login',methods=['GET','POST'])
 def login():
     form = LoginForm()
