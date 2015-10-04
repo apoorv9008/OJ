@@ -3,6 +3,9 @@ from app import app
 from flask import flash,redirect
 from .forms import LoginForm
 from flask import request
+from subprocess import call
+import time
+import pdb
 #import requests
 
 
@@ -12,11 +15,11 @@ def index():
     user = {'nickname': 'Dhruv'}  # fake user
     problems = [  # fake array of problems
         { 
-            'author': {'nickname': 'John'}, 
+            'author': {'nickname': 'Yogesh'}, 
             'body': 'Sort an array!' 
         },
         { 
-            'author': {'nickname': 'Susan'}, 
+            'author': {'nickname': 'Prakhar'}, 
             'body': 'Count even numbers!' 
         }
     ]
@@ -47,8 +50,55 @@ def submit():
 
 @app.route('/trying',methods=['POST'])
 def trying():
+    #pdb.set_trace()
     print ("I got it!")
-    print request.form['projectFilepath']
+    data=request.form['projectFilepath']
+    problem_code="at1"
+    #problem_code=request.form['problem_code']
+   
+    ###judge logic##
+    #print problem_code
+    #print data
+    filename="runID"    ##create file from input problem_code
+    language="cpp"
+    f=open(filename+"."+language,'w')
+    f.write(str(data))  ##write code from input
+    f.close()
+
+    print data
+   
+    input_file="input"+"_"+problem_code+".txt"
+   
+    correct_output_file="output"+"_"+problem_code+".txt"
+    f=open(correct_output_file,'r')
+    correct_data=f.read()
+    f.close()
+
+    output_file="output"+"_"+filename+".txt"
+    f=open(output_file,'w')
+
+    print "Code created"
+
+    if(language=="cpp"):
+        call('ulimit -t 1;g++ '+filename+"."+language,shell=True);
+        print "compliation done"
+        call('./a.out'+' < '+input_file+' > '+output_file,shell=True);
+
+    print "Code created"
+
+    f=open(output_file,'r')
+    written_data=f.read()
+    f.close()
+
+    print written_data
+    print correct_data
+
+    if written_data==correct_data:
+        print "Code is correct"
+        return render_template('result_AC.html')
+    else:
+        print "Code Incorrect"
+    ##############
     return render_template('trying.html')
 
 @app.route('/login',methods=['GET','POST'])
