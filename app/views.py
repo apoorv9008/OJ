@@ -78,11 +78,15 @@ def trying():
     f=open(output_file,'w')
 
     print "Code created"
-
+    timelimit=10
     if(language=="cpp"):
-        call('ulimit -t 1;g++ '+filename+"."+language,shell=True);
+        call('timeout 1s g++ '+filename+"."+language,shell=True);
         print "compliation done"
-        call('./a.out'+' < '+input_file+' > '+output_file,shell=True);
+        start_time=time.time()
+        call('timeout 1s ./a.out < '+input_file+' > '+output_file,shell=True);
+        duration=time.time()-start_time;
+        if duration >= timelimit:
+            render_template('result_TLE.html')
 
     print "Code created"
 
