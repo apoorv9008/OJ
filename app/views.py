@@ -65,6 +65,9 @@ def trying():
     f.write(str(data))  ##write code from input
     f.close()
 
+
+    #http://iconizer.net/files/realistiK_Reloaded/orig/error.png
+
     print data
    
     input_file="input"+"_"+problem_code+".txt"
@@ -77,16 +80,27 @@ def trying():
     output_file="output"+"_"+filename+".txt"
     f=open(output_file,'w')
 
+    call('g++ call_me_first.cpp',shell=True);
+    call('/a.out > '+output_file,shell=True);
+
+    f.close();
+
+    f=open(output_file,'r')
+    written_data=f.read()
+    print written_data
+    f.close()
+
     print "Code created"
-    timelimit=10
+    timelimit=1
     if(language=="cpp"):
         call('timeout 1s g++ '+filename+"."+language,shell=True);
         print "compliation done"
         start_time=time.time()
         call('timeout 1s ./a.out < '+input_file+' > '+output_file,shell=True);
         duration=time.time()-start_time;
+        print duration
         if duration >= timelimit:
-            render_template('result_TLE.html')
+            return render_template('result_TLE.html')
 
     print "Code created"
 
@@ -97,11 +111,15 @@ def trying():
     print written_data
     print correct_data
 
+    if written_data=='compilation error':
+        return render_template('result_CE.html')
+
     if written_data==correct_data:
         print "Code is correct"
-        return render_template('result_AC.html')
+        return render_template('result_AC.html',duration=duration)
     else:
         print "Code Incorrect"
+        return render_template('result_WA.html')
     ##############
     return render_template('trying.html')
 
