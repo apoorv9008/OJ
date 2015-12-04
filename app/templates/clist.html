@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Contest List</title>
+</head>
+<body>
+	{% set counter = 0 %}
+	{% for item in cnames %}
+		<li> <a href = "{{clinks[counter]}}"> {{item}} </a> </li>
+ 		{% set counter = counter + 1 %}
+	{% endfor %}
+</body>
+</html>
