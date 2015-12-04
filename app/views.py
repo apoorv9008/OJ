@@ -1,13 +1,26 @@
 from flask import render_template
 from app import app
 from flask import flash,redirect
-from .forms import LoginForm
 from flask import request
 from subprocess import call
 import time
 import pdb
+from bs4 import BeautifulSoup
+from urllib2 import urlopen
 #import requests
 
+@app.route('/clist')
+def clist():
+    url=urlopen("http://clist.by/")
+    soup = BeautifulSoup(url)
+    x = []
+    y = []
+    for link in soup.find_all('div' , class_ = "contest-title"):
+        x.append(link.a["title"])
+        y.append(link.a["href"])
+        # print link.a["title"]
+        # print link.a["href"]
+    return render_template("clist.html" , cnames = x , clinks = y , item = x[0])
 
 @app.route('/')
 @app.route('/index')
@@ -28,14 +41,30 @@ def index():
                            user=user,
                            problems=problems)
 
+@app.route('/check')
+def check():
+    return render_template('extend.html')
 
 @app.route('/problems')
 def problems():
     return render_template("problems.html")
 
-@app.route('/ATM')
+"""@app.route('/ATM')
 def ATM():
     return render_template("atm.html")
+
+@app.route('/tsort')
+def tsort():
+    return render_template('tsort.html')
+
+@app.route('/intest')
+def intest():
+    return render_template('intest.html')
+"""
+@app.route('/problems/<problem>')
+def prob(problem):
+    page_name=problem+'.html'
+    return render_template(page_name)
 
 """@app.route('/submit')
 def submit():
@@ -50,10 +79,29 @@ def submit():
 
 @app.route('/trying',methods=['POST'])
 def trying():
+
+    all_codes= ['at1','tsort','intest']
+
     #pdb.set_trace()
     print ("I got it!")
     data=request.form['projectFilepath']
-    problem_code="at1"
+    problem_code=request.form['problemcode']
+
+    new_code=""
+    for c in problem_code:
+        if c!=' ':
+            new_code+=c
+    problem_code=new_code
+    print problem_code
+
+    found=False
+    for codes in all_codes:
+        if codes==problem_code:
+            found=True
+
+    if found==False:
+        return render_template('invalid problem code.html')
+
     #problem_code=request.form['problem_code']
    
     ###judge logic##
@@ -81,7 +129,7 @@ def trying():
     f=open(output_file,'w')
 
     call('g++ call_me_first.cpp',shell=True);
-    call('/a.out > '+output_file,shell=True);
+    call('./a.out > '+output_file,shell=True);
 
     f.close();
 
