@@ -89,17 +89,18 @@ def trying():
 
     new_code=""
     for c in problem_code:
-        if c!=' ':
+        if c!=' ' and c != '\n':
             new_code+=c
     problem_code=new_code
+    
     print problem_code
 
     found=False
     for codes in all_codes:
-        if codes==problem_code:
-            found=True
+        if codes == problem_code:
+            found = True
 
-    if found==False:
+    if found == False:
         return render_template('invalid problem code.html')
 
     #problem_code=request.form['problem_code']
@@ -116,7 +117,7 @@ def trying():
 
     #http://iconizer.net/files/realistiK_Reloaded/orig/error.png
 
-    print data
+    # print data
    
     input_file="input"+"_"+problem_code+".txt"
    
@@ -135,7 +136,9 @@ def trying():
 
     f=open(output_file,'r')
     written_data=f.read()
+  
     print written_data
+  
     f.close()
 
     print "Code created"
@@ -156,13 +159,42 @@ def trying():
     written_data=f.read()
     f.close()
 
-    print written_data
-    print correct_data
+    # print written_data
+    # print correct_data
+
+    print "checking"
+    check1 = ""
+    check2 = ""    
+    for item in written_data:
+        check1 += str(item)
+
+    for item in correct_data:
+        check2 += str(item)
+
+    # print check1
+    # print check2
+
+    fc1 = ""
+    fc2 = ""
+    for x in check1:
+        x = str(x)
+        if ( (x >= 'a' and x <= 'z') or (x >= '0' and x <= '9') or (x >= 'A' and x <= 'Z')):
+            fc1 += x
+
+    for x in check2:
+        x = str(x)
+        if ( (x >= 'a' and x <= 'z') or (x >= '0' and x <= '9') or (x >= 'A' and x <= 'Z')):
+            fc2 += x
+
+    print fc1
+    print fc2
+
+    # print correct_data
 
     if written_data=='compilation error':
         return render_template('result_CE.html')
 
-    if written_data==correct_data:
+    if fc1 == fc2:
         print "Code is correct"
         return render_template('result_AC.html',duration=duration)
     else:
