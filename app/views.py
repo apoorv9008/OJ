@@ -9,6 +9,102 @@ from bs4 import BeautifulSoup
 from urllib2 import urlopen
 #import requests
 
+ivc = 0
+testing_problemcode = ""
+
+@app.route('/testing')
+def testing():
+    data_sent = False
+    return render_template('testing.html' , data_sent = data_sent)
+
+@app.route('/generate_testcases' , methods = ['POST'])
+def generate_testcases():
+   
+    print "generate_testcases"
+    
+    f = open("range_testcases.txt" , "w")
+    f.write(str(ivc) + " ")
+   
+    for i in range(ivc):
+        form_name = str(i)
+        f.write(request.form[form_name] + " ")
+        form_name = str(i + ivc)
+        f.write(request.form[form_name] + " ")
+   
+    f.close()
+    call('g++ protest.cpp' ,shell = True)
+    call('./a.out')
+    call('g++ protest_random.cpp' ,shell = True)
+    call('./a.out')
+
+    f = open("labfile.txt" , "r")
+    g = open("input_" + testing_problemcode + ".txt" , "w");
+    testing_testcases = sum(1 for line in open("labfile.txt"))
+    g.write(str(testing_testcases) + "\n")
+    g.write(f.read())
+    f.close()
+    g.close()
+
+    print "file written"
+
+
+    testing_correct_file = testing_problemcode + "_AC.cpp"
+    print testing_correct_file
+    testing_output_file = "output_" + testing_problemcode + ".txt"
+    print testing_output_file
+    call('g++ ' + testing_correct_file , shell = True)
+    call('./a.out ' + '< ' + "input_" + testing_problemcode + ".txt" + ' > '  + testing_output_file , shell = True)
+
+    f = open("labfile.txt" , "r")
+    boundary_testing = f.read()
+    f.close()
+
+    boundary_testing = str(boundary_testing)
+    
+    print boundary_testing
+    
+    boundary_testing = boundary_testing.split(' ')
+    x = []
+    for line in boundary_testing:
+        if line >= 0 and line != ' ' and line != '\n':
+            x.append(line)
+
+    #print boundary_testing[0]
+    #print boundary_testing[1]
+
+    f = open("labfile_random.txt" , "r");
+    random_testing = f.read()
+    f.close()
+
+    random_testing = random_testing.split(' ')
+    
+    for line in random_testing:
+        if line.strip():           # line contains eol character(s)
+            n = int(line)          # assuming single integer on each line
+            x.append(n)
+    iter = x[0]
+    # print random_testing
+    return render_template('generate_testcases.html' , x = x , iter = x[0] , ivc = ivc)
+
+
+@app.route('/create_testcases' , methods = ['POST'])
+def create_testcases():
+    varcount=request.form['testing_varcount']
+    int_varcount = int(varcount)
+    problem_code=request.form['testing_problemcode']
+   
+    global ivc
+    ivc = int_varcount
+    global testing_problemcode
+    testing_problemcode = problem_code
+  
+    print problem_code
+    print varcount
+    data_sent = True
+    i = 0
+    return render_template('testing.html' , data_sent = data_sent , problem_code = problem_code , varcount = int_varcount)
+
+
 @app.route('/clist')
 def clist():
     url=urlopen("http://clist.by/")
@@ -80,7 +176,7 @@ def submit():
 @app.route('/trying',methods=['POST'])
 def trying():
 
-    all_codes= ['at1','tsort','intest']
+    all_codes= ['at1','tsort','intest' , 'factrl']
 
     #pdb.set_trace()
     print ("I got it!")
@@ -108,9 +204,9 @@ def trying():
     ###judge logic##
     #print problem_code
     #print data
-    filename="runID"    ##create file from input problem_code
+    filename = 1    ##create file from input problem_code
     language="cpp"
-    f=open(filename+"."+language,'w')
+    f=open(str(filename) + "." + language,'w')
     f.write(str(data))  ##write code from input
     f.close()
 
@@ -126,7 +222,7 @@ def trying():
     correct_data=f.read()
     f.close()
 
-    output_file="output"+"_"+filename+".txt"
+    output_file="output"+"_" + str(filename) + ".txt"
     f=open(output_file,'w')
 
     call('g++ call_me_first.cpp',shell=True);
@@ -144,7 +240,7 @@ def trying():
     print "Code created"
     timelimit=1
     if(language=="cpp"):
-        call('timeout 1s g++ '+filename+"."+language,shell=True);
+        call('timeout 1s g++ '+ str(filename) +"."+language,shell=True);
         print "compliation done"
         start_time=time.time()
         call('timeout 1s ./a.out < '+input_file+' > '+output_file,shell=True);
