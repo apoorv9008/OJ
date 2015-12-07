@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Submit </title>
+	<style type="text/css">
+	#input_code {
+		height: 450px;
+		width: 500px;
+	}
+	#problem_code {
+		height:30px;
+		width:200px;
+	}
+	</style>
+</head>
+<body bgcolor="lightgrey">
+	<form action="trying" method="post">
+		Submit Your Code :<br> <textarea type="text" name="projectFilepath" id="input_code"> Enter Here</textarea> <br>
+		Problem Code : <br> <textarea type="text" name="problemcode" id="problem_code"> </textarea> <br>
+		Language : <br> <textarea type="text" name="problemlanguage" id="problem_language"> </textarea> <br>
+		<input type="submit" value="Submit">
+		
+	</form>
+
+	<table>
+		<tr>
+			<td>Select a File to Load:</td>
+			<td><input type="file" id="fileToLoad"></td>
+			<td><button onclick="loadFileAsText()">Load Selected File</button><td>
+		</tr>
+	</table>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	function loadFileAsText() {
+		var fileToLoad=document.getElementById('fileToLoad').files[0];
+		var fileReader = new FileReader();
+		fileReader.onload = function(fileLoadedEvent) {
+			var textFromFileLoaded = fileLoadedEvent.target.result;
+			document.getElementById("input_code").value = textFromFileLoaded;
+		};
+		fileReader.readAsText(fileToLoad, "UTF-8");
+	};
+</script>

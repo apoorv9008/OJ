@@ -1,0 +1,13 @@
+<html>
+<head>
+	<body>
+		{% for y in x %}
+			{% if y == '\n' %}
+			<br>
+			{% elif y == ' ' %}
+			 &nbsp;
+			{% endif %}
+			{{y}}
+		{% endfor %}
+	</body>
+</html>

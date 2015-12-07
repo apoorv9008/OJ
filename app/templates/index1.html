@@ -1,0 +1,163 @@
+<html>
+<head>
+<title>DYP ONLINE JUDGE</title>
+ <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/core.css">
+<style>
+#main
+{
+  width: 100%;
+  margin-left: -50px;
+}
+#a
+{
+margin-top: 10px;
+margin-left: -10px;
+display: inline-block;
+}
+a{
+  text-decoration: none;
+}
+
+body
+{
+  padding: 50px;
+  background-size: 100%;
+}
+
+.animate
+{
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+}
+
+.action-button
+{
+  position: relative;
+  padding: 10px 40px;
+  margin: 0px 15px 15px 0px;
+  float: left;
+  border-radius: 10px;
+  /*font-family: 'Pacifico', cursive;
+  */font-size: 25px;
+  color: #FFF;
+  text-decoration: none;  
+}
+
+
+.black1
+{
+  background-color: rgba(255,178,102,.1);
+  border-bottom: 5px solid rgba(255,198,142,.2);
+  text-shadow: 0px -2px rgba(255,198,142,.2);
+  text-align: center;
+  margin-right: 100px;
+}
+
+.black
+{
+  background-color: rgba(255,178,102,.2);
+  border-bottom: 5px solid rgba(255,198,142,.2);
+  text-shadow: 0px -2px rgba(255,198,142,.2);
+  text-align: center;
+  margin-right: 100px;
+  width: 1200px;
+}
+
+.blue
+{
+  background-color: rgb(0,38,77);
+  border-bottom: 5px solid #2980B9;
+  opacity: .6;
+  text-shadow: 0px -2px #2980B9;
+  width: 600px;
+}
+.red
+{
+  background-color: #E74C3C;
+  border-bottom: 5px solid #BD3E31;
+  text-shadow: 0px -2px #BD3E31;
+  width: 600px;
+  opacity: .7;
+}
+
+.green
+{
+  background-color: #82BF56;
+  border-bottom: 5px solid #669644;
+  text-shadow: 0px -2px #669644;
+  width: 600px;
+  opacity: .7;
+}
+
+.yellow
+{
+
+  background-color: #F2CF66;
+  border-bottom: 5px solid #D1B358;
+  text-shadow: 0px -2px #D1B358;
+  opacity: .7;
+  width: 600px;
+}
+
+.action-button:active
+{
+  transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+  border-bottom: 1px solid;
+}
+</style>
+</head>
+
+
+
+
+<body background= "{{ url_for('static',filename='finalbc.jpg')}}">
+	
+	
+		
+    {% if user_login %}
+    <div id="main">
+      
+       <a href="/logout" class="action-button shadow animate black" >DYP ONLINE JUDGE</a>
+      <a href="/user_profile" class="action-button shadow animate black1" > hi {{user}}!!!</a>
+    </div>
+    <br>
+    <div>
+  <div id="a">
+  <a href="/index1" class="action-button shadow animate blue">Home</a>
+  <a href="/problems" class="action-button shadow animate blue">Practice</a>
+  <a href="/contest" class="action-button shadow animate blue">Contests</a>
+  <a href="/rankings" class="action-button shadow animate blue">Rankings</a>
+   <a href="/moretrailers" class="action-button shadow animate blue">Tutorials</a>
+    <a href="/clist" class="action-button shadow animate blue">Current Online Contests</a>
+    <a href="/testing" class="action-button shadow animate blue">Automated Testing</a>
+  <a href="/logout" class="action-button shadow animate blue" >logout</a>
+</div>
+</div>
+    {% else %}
+		
+			<a href="/index" class="action-button shadow animate black1">Login Again</a></li>
+		
+    {% endif %}
+
+		<!-- <ul id="list-nav">
+		  <li id="first"><a href="#">Home</a></li>
+		  <li ><a href="/problems">Practice</a></li>
+		  <li ><a href="/contest">Contests</a></li>
+      <li><a href="/rankings">Rankings</a>
+		  <li id="secon"><a href="#">About DYP OJ</a></li>
+		  <li><a href="#">Contact Us</a></li>
+		</ul> -->
+
+<!-- <secion class="mysec">
+
+<p>First Practice Hard, and then <b>Code</b> and<br>Code Untill  <b>Legends</b> Start Competing You.</p>
+
+</section>
+ -->
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>
+		userprofile
+	</title>
+	<style type="text/css">
+	#flattable {
+  display: block;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 115%;
+  overflow: auto;
+  width: auto;}
+  
+  th {
+    background-color: rgb(0,38,77);
+    color: white;
+    font-weight: normal;
+    padding: 20px 30px;
+    text-align: center;
+    opacity: .9;
+  }
+  td {
+    background-color: rgb(238, 238, 238);
+    color: black;
+    padding: 20px 30px;
+    opacity: .6;
+  }
+  a{
+    text-decoration: none;
+  }
+  body{
+    background-size: 100%;
+  }
+  </style>
+</head>
+	<body background= "{{ url_for('static',filename='finalbc.jpg')}}">
+		<div id="1">
+			<h1> hello {{user}} </h1>
+			<table>
+				<tr>
+				<th>s.no.</th>
+				<th>problem code</th>
+				<th>source code</th>
+				<th>verdict</th>
+			</tr>
+			{% set count = 1 %}				
+			 {% for x in arr %}
+		    <tr>
+		      <td> {{count}}</td>
+		      <td><a href="/{{x[1]}}">{{x[1]}}</td>
+		      <td><a href = "source/{{x[2]}}"> {{x[2]}} </a> </td>
+		      <td>{{x[3]}}</td>
+		    </tr>
+		    {% set count = count + 1 %}
+		    {% endfor %}
+
+		</div>

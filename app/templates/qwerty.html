@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1> Hi, {{user.nickname }}!</h1>
+  {% for problem in problems %}
+  <div>
+    <p>
+      {{problem.author.nickname}} statement : <b>{{problem.body}}</b>
+    </p>
+  </div>
+  {% endfor %}
+  {% endblock %}
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - microblog</title>
+    {% else %}
+    <title>Welcome to microblog</title>
+    {% endif %}
+  </head>
+  <body>
+    <h1>Hi, {{ user.nickname }}!</h1>
+    {% for problem in problems %}
+    <div><p>{{ problem.author.nickname }} says: <b>{{ problem.body }}</b></p></div>
+    {% endfor %}
+  </body>
+</html> -->

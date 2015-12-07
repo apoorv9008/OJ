@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Testing </title>
+	<style>
+	body{
+		background-size: 100%;
+
+	}
+	input{
+		height: 30px;
+		width: 200px;
+	}
+
+	form{
+		margin-left: 40%;
+	}
+	li
+	{
+		font-size: 20px;
+	}
+
+	</style>
+
+</head>
+<body background= "{{ url_for('static',filename='finalbc.jpg')}}">
+	{% if data_sent == False %}
+	<form action = "create_testcases" method = "post">
+		<h2>Enter Problem Code:</h2>
+		 <input type = "text" name = "testing_problemcode" > 
+	
+		<h2>Enter variable count</h2>
+	
+		<input type = "int" name = "testing_varcount">
+		<br>
+		<br>
+		<input type = "submit" value = "Submit">
+	</form>
+	{% else %}
+		<form action="generate_testcases" , method = "post">
+		{% for i in range(varcount) %}
+			<ul>
+				<li> Variable {{i}} </li>
+				<li> Enter  left  value :: <input type = "int" name = "{{i}}"></li>
+				<br>
+				<li>Enter right value : <input type = "int" name = "{{i + varcount}}"></li>
+			</ul>
+		{% endfor %}
+		<input type="submit" value="Submit">
+		</form>
+	{% endif %}
+</body>
+</html>

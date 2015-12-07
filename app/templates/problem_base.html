@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+	#prblm
+	{
+		height: 1600px;
+		width: 700px;
+		border:solid grey 5px;
+		//-webkit-font-smoothing: antialiased;
+		display: block;
+		box-shadow: 3px;
+		border-radius: 15px;
+		background-color: #fff;
+	}
+	h1{
+		color: brown;
+		text-align: center;
+		text-decoration: underline;
+
+	}
+	h3
+	{
+		text-align: center;
+		color: brown;
+		margin-top: -15px;
+	}
+	p{
+		font-size: 1.3em;
+		padding: 5px;
+	}
+	#btn
+	{
+		float:right;
+		/*margin-top:-1400px;
+		margin-right: 50px;*/
+
+	}
+	button
+	{
+		width: 200px;
+		height: 70px;
+		font-size: 18px;
+
+	}
+	button:hover
+	{
+		background-color: #666;
+		margin-top: -5px;
+	}
+	#more
+	{
+		width: 300px;
+		height: 1300px;
+		border:solid grey 2px;
+		margin-left: 1020px;
+		/*margin-top: -1320px;*/
+		border-radius: 10px;
+		background-color: white;
+
+	}
+	h2
+	{
+		text-align: center;
+
+	}
+	</style>
+</head>
+
+<body>
+
+	{% block content %}
+	{% endblock %}
+
+	<div id="btn">
+		<button type="submit" onclick="fun()">submit</button>
+	</div>
+	<div id="more">
+		<h1>More questions</h1>
+		<hr>
+		<h2><a href="#">enormous</a></h2>
+		<hr>
+		<h2><a href="#">enormous</a></h2>
+		<hr>
+		<h2><a href="#">enormous</a></h2>
+		<hr>
+		<h2><a href="#">enormous</a></h2>
+		<hr>
+		<h2><a href="#">enormous</a></h2>
+		<hr>
+		<h2><a href="#">enormous</a></h2>
+		<hr>
+		<h2><a href="#">enormous</a></h2>
+		<hr>
+		<h2><a href="#">enormous</a></h2>
+		<hr>
+		<h2><a href="#">enormous</a></h2>
+		<hr>
+		<h2><a href="#">enormous</a></h2>
+		<hr>
+	</div>
+
+</body>
+
+
+</html>
+
+<script type="text/javascript">
+	function fun()
+	{
+		window.location.href="/submit";
+	}
+</script>

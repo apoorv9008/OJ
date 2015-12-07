@@ -1,0 +1,19 @@
+from flask import Flask
+import MySQLdb
+
+
+db = MySQLdb.connect("localhost","root","root","EmpData" )
+
+# prepare a cursor object using cursor() method
+cursor = db.cursor()
+
+# execute SQL query using execute() method.
+cursor.execute("SELECT userName from User;")
+
+# Fetch a single row using fetchone() method.
+data = cursor.fetchone()
+
+print "Database version : %s " % data
+
+# disconnect from server
+db.close()

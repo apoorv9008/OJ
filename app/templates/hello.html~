@@ -1,0 +1,9 @@
+<html>
+<head>
+<title>hello
+</title>
+</head>
+<body>
+hello<strong> {{name}}</strong> you are registered;
+</body>
+</html>

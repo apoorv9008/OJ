@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>
+			Service Not Available
+		</title>
+		<style type="text/css">
+			p
+				{
+					color:black;
+					font-size: 36px;
+					font-family: Lucida Bright,Georgia,serif;
+					z-index: 100;
+					margin-top: 100px;
+				}
+				body
+				{
+					background-repeat: no-repeat;
+					background-size: 130%;
+				}
+		</style>
+	</head>
+<body background="logo5.jpg">
+	<p>
+		SORRY!!! <br>There are no live contests running!!!
+	</p>
+</body>
+</html>

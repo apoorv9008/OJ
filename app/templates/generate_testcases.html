@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Generating testcases </title>
+</head>
+<body>
+	<p>
+	{% set count = 0 %}
+	{% for iter in x %}
+		{% if count % ivc == 0 %}
+			<hr>
+		{% endif %}
+		{{iter}}
+	{% set count = count + 1 %}
+	{% endfor %}
+	</p>
+</body>
+</html>

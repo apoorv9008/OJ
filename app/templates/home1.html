@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html class="mouse">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+	<meta charset="utf-8">
+
+	<title>Welcome to Buzzbee!</title>
+
+	<!-- Behavioral Meta Data -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<!-- Core Meta Data -->
+	<meta name="author" content="Matthew Wagerfield">
+	<meta name="description" content="Simple, lightweight Parallax Engine that reacts to the orientation of a smart device">
+	<meta name="keywords" content="parallax,javascript,jquery,zepto,plugin">
+
+	<!-- Open Graph Meta Data -->
+	<meta property="og:description" content="Simple, lightweight Parallax Engine that reacts to the orientation of a smart device">
+	<meta property="og:image" content="http://wagerfield.github.io/parallax/assets/images/thumbnail.png">
+	<meta property="og:site_name" content="parallax.js">
+	<meta property="og:title" content="parallax.js">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://wagerfield.github.io/parallax/index.html">
+
+	<!-- Humans -->
+	<link rel="author" href="http://matthew.wagerfield.com/parallax/humans.txt">
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="../static/styles.css">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="http://matthew.wagerfield.com/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="http://matthew.wagerfield.com/favicon.png" type="image/png">
+	<link rel="shortcut icon" href="http://wagerfield.github.io/parallax/favicon.png" type="image/png">
+	<style>
+	#email,#username,#password,#confirm {
+		width: 400px;
+		height: 50px;
+		border-radius: 5px;
+		box-shadow: 0px 0px 8px brown inset;
+	}
+	</style>
+</head>
+<body>
+	<section id="about" class="wrapper about hide accelerate">
+			<div class="cell accelerate">
+				<div class="cables center accelerate">
+					<div class="panel accelerate" id="logreg">
+						<div id="log">
+							<header>
+							<h1>Log In!<br><em>To get started!</em></h1>
+							</header>
+						<form id="login" method="post" action="/login/">
+							<br>
+							{{ formLog.username(id="username", placeholder="Your Username") }}
+							<br><br>
+							{{ formLog.password(id="password", placeholder="Your password") }}
+							<br><br>
+							<input type="submit" value="Sign in"><br><br>
+							{{ errorLog }}
+						</form>
+						<br>
+						<p> New User? <em onclick="register()" style="cursor:pointer">Register Here</em></p>
+						<h2>Or</h2>
+						<ul class="links">
+							<li><a href="https://github.com/wagerfield/parallax/archive/master.zip">Login with Facebook</a></li>
+							<li><a target="_blank" href="https://github.com/wagerfield/parallax">Login with Twitter</a></li>
+						</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<button id="toggle" class="toggle i">
+			<div class="cross">
+				<div class="x"></div>
+				<div class="y"></div>
+			</div>
+		</button>
+	</div>
+<script>
+	function register(){
+		var x = document.getElementById('log');
+		x.parentNode.removeChild(x)
+		
+		var register = document.createElement('div');
+		register.innerHTML = '<div id="reg"><header><h1>Sign Up!</h1></header><form id="register" method=post action="/register/"><br>{{formReg.username(id="username", placeholder = "Your Username")}}<br><br>{{formReg.email(id="email", placeholder = "Your Email here")}}<br><br>{{formReg.password(id="password", placeholder = "Your Password")}}<br><br>{{formReg.confirm(id="confirm", placeholder = "Confirm password again")}}<br><br><input type="submit" value="Sign Up!"><br><br>{{ errorReg }}</form><p> Already a User? <em onclick="login()" style="cursor:pointer">Login Here</em></p><h2>Or</h2><ul class="links"><li><a href="https://github.com/wagerfield/parallax/archive/master.zip">Login with Facebook</a></li><li><a target="_blank" href="https://github.com/wagerfield/parallax">Login with Twitter</a></li></ul></div>';
+		document.getElementById('logreg').appendChild(register);
+		console.log(document.getElementById('reg').children[2]);
+	}
+	function login(){
+		var x = document.getElementById('reg');
+		x.parentNode.removeChild(x)
+		
+		var login = document.createElement('div');
+		login.innerHTML = '<div id="log"><header><h1>Log In!<br><em>To get started!</em></h1></header><form id="login" method="post" action="/login/"><br><input type="text" id="email" placeholder="Your E-Mail"><br><br><br><input type="password" id="password" placeholder="Your Password"><br><br><input type="submit" value="Sign in"><br><br>{{ errorLog }}</form><br><p> New User? <em onclick="register()" style="cursor:pointer">Register Here</em></p><h2>Or</h2><ul class="links"><li><a href="https://github.com/wagerfield/parallax/archive/master.zip">Login with Facebook</a></li><li><a target="_blank" href="https://github.com/wagerfield/parallax">Login with Twitter</a></li></ul></div>';
+		document.getElementById('logreg').appendChild(login);
+	}
+	</script>
+</body>
+</html>

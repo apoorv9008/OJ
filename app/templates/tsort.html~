@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		tsort
+	</title>
+	<style type="text/css">
+	#prblm
+	{
+		height: 1400px;
+		width: 1000px;
+		border:solid grey 5px;
+		//-webkit-font-smoothing: antialiased;
+		display: block;
+		box-shadow: 3px;
+		border-radius: 15px;
+		background-color: #fff;
+	}
+	h1{
+		color: brown;
+		text-align: center;
+		text-decoration: underline;
+
+	}
+	h3
+	{
+		text-align: center;
+		color: brown;
+		margin-top: -15px;
+	}
+	p{
+		font-size: 1.3em;
+		padding: 5px;
+	}
+	pre{
+		font-size: 1.3em;
+		padding: 5px;
+	}
+	#btn
+	{
+		float:right;
+		margin-top:-1400px;
+		margin-right: 50px;
+
+	}
+	button
+	{
+		width: 200px;
+		height: 70px;
+		font-size: 18px;
+
+	}
+	button:hover
+	{
+		background-color: #666;
+		margin-top: -5px;
+	}
+	#more
+	{
+		width: 300px;
+		height: 1300px;
+		border:solid grey 2px;
+		margin-left: 1020px;
+		margin-top: -1320px;
+		border-radius: 10px;
+		background-color: white;
+
+	}
+	h2
+	{
+		text-align: center;
+
+	}
+	</style>
+
+</head>
+<body bgcolor="lightgrey">
+<div id="prblm">
+<h1>TURBO SORT</h1>
+<h3>problem code:tsort</h3>
+<p >
+<b>All submissions for this problem are available.
+</b></p>
+<p>
+
+Given the list of numbers, you are to sort them in non decreasing order.
+</p>
+<p>
+<b>Input
+</b>
+</p>
+<p>
+ t-the number of numbers in list, then t lines follow [t <= 10^6]. 
+Each line contains one integer: N [0 <= N <= 10^6]
+</p>
+<p>
+<b>Output
+</b>
+</p>
+
+<p>
+Output given numbers in non decreasing order.
+</p>
+<p>
+Example
+</p>
+<p>
+
+<b>
+Input:
+</b>
+</p>
+<pre>
+5
+5
+3
+6
+7
+1
+</pre>
+<p>
+<b>
+Output:
+</b>
+</p>
+<pre>
+1
+3
+5
+6
+7
+</pre>
+</p>
+</div>
+<div id="btn">
+<button type="submit" onclick="fun()">submit</button>
+</div>
+<div id="more">
+<h1>more questions</h1>
+<hr>
+<h2><a href="/intest">Enormous input test</a></h2>
+<hr>
+<h2><a href="/factrl">factorial</a></h2>
+<hr>
+<h2><a href="/tsort">turbo sort</a></h2>
+<hr>
+<h2><a href="/recipe">Cutting recipes</a></h2>
+<hr>
+<h2><a href="/onp">transform</a></h2>
+<hr>
+<h2><a href="tlg.htm">The lead Game</a></h2>
+<hr>
+<h2><a href="muffn">packaging cup cakes</a></h2>
+<hr>
+<h2><a href="sint.htm">sums in triangle</a></h2>
+<hr>
+<h2><a href="#">break the code</a></h2>
+<hr>
+<h2><a href="#">Atm</a></h2>
+<hr>
+</div>
+<script type="text/javascript">
+	function fun()
+	{
+		window.location.href="/submit";
+	}
+</script>
+</body>
+</html>

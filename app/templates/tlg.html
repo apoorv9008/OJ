@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		tlg
+	</title>
+	<style type="text/css">
+	#prblm
+	{
+		height: 1700px;
+		width: 1000px;
+		border:solid grey 5px;
+		//-webkit-font-smoothing: antialiased;
+		display: block;
+		box-shadow: 3px;
+		border-radius: 15px;
+		background-color: #fff;
+	}
+	h1{
+		color: brown;
+		text-align: center;
+		text-decoration: underline;
+
+	}
+	h3
+	{
+		text-align: center;
+		color: brown;
+		margin-top: -15px;
+	}
+	p{
+		font-size: 1.3em;
+		padding: 5px;
+	}
+	pre{
+		font-size: 1.3em;
+		padding: 5px;
+	}
+	#btn
+	{
+		float:right;
+		margin-top:-1600px;
+		margin-right: 50px;
+
+	}
+	button
+	{
+		width: 200px;
+		height: 70px;
+		font-size: 18px;
+
+	}
+	button:hover
+	{
+		background-color: #666;
+		margin-top: -5px;
+	}
+	#more
+	{
+		width: 300px;
+		height: 1300px;
+		border:solid grey 2px;
+		margin-left: 1020px;
+		margin-top: -1520px;
+		border-radius: 10px;
+		background-color: white;
+
+	}
+	h2
+	{
+		text-align: center;
+
+	}
+	a{
+		text-decoration: none;
+	}
+	</style>
+
+</head>
+<body bgcolor="lightgrey">
+<div id="prblm">
+<h1>THE LEAD GAME</h1>
+<h3>problem code:tlg</h3>
+<p >
+<b>All submissions for this problem are available.
+</b></p>
+<p>
+
+The game of billiards involves two players knocking 3 balls around on a green baize table. Well, there is more to it, but for our purposes this is sufficient.
+The game consists of several rounds and in each round both players obtain a score, based on how well they played. Once all the rounds have been played, the total score of each player is determined by adding up the scores in all the rounds and the player with the higher total score is declared the winner.
+</p>
+<p>
+
+The Siruseri Sports Club organises an annual billiards game where the top two players of Siruseri play against each other. The Manager of Siruseri Sports Club decided to add his own twist to the game by changing the rules for determining the winner. In his version, at the end of each round the leader and her current lead are calculated. Once all the rounds are over the player who had the maximum lead at the end of any round in the game is declared the winner.
+</p>
+<p>
+Consider the following score sheet for a game with 5 rounds:
+</p>
+<pre>
+     Round        Player 1           Player 2
+
+      1              140                 82
+      2              89                 134 
+      3              90                 110 
+      4              112                106
+      5              88                  90 
+</pre>
+<p>
+The total scores of both players, the leader and the lead after each round for this game is given below:
+</p>
+<pre>
+      Round          Player 1       Player 2      Leader     Lead
+
+      1               140               82        Player 1     58
+      2               229           	216       Player 1     13
+      3               319           	326       Player 2      7
+      4               431           	432       Player 2      1
+      5               519           	522       Player 2      3
+</pre>
+<p>
+The winner of this game is Player 1 as he had the maximum lead (58 at the end of round 1) during the game.
+Your task is to help the Manager find the winner and the winning lead. You may assume that the scores will be such that there will always be a single winner. That is, there are no ties.
+</p>
+<p>
+<b>Input
+</b>
+</p>
+<p>
+The first line of the input will contain a single integer N (N <=10000) indicating the number of rounds in the game. Lines 2,3,...,N+1 describe the scores of the two players in the N rounds. Line i+1 contains two integer Si and Ti, the scores of the Player 1 and 2 respectively, in round i. You may assume that 1>=Si <=1000 and 1 <= Ti >= 1000.
+</p>
+<p>
+<b>Output
+</b>
+</p>
+
+<p>
+Your output must consist of a single line containing two integers W and L, where W is 1 or 2 and indicates the winner and L is the maximum lead attained by the winner.
+</p>
+<p>
+Example
+</p>
+<p>
+
+<b>
+Input:
+</b>
+</p>
+<pre>
+5
+140 82
+89 134
+90 110
+112 106
+88 90
+</pre>
+<p>
+<b>
+Output:
+</b>
+</p>
+<pre>
+1 58
+</pre>
+</p>
+</div>
+<div id="btn">
+<button type="submit" onclick="fun()">submit</button>
+</div>
+<div id="more">
+
+<h1>more questions</h1>
+<hr>
+<h2><a href="/intest">Enormous input test</a></h2>
+<hr>
+<h2><a href="/factrl">factorial</a></h2>
+<hr>
+<h2><a href="/tsort">turbo sort</a></h2>
+<hr>
+<h2><a href="/recipe">Cutting recipes</a></h2>
+<hr>
+<h2><a href="/onp">transform</a></h2>
+<hr>
+<h2><a href="/tlg">The lead Game</a></h2>
+<hr>
+<h2><a href="/muffin">packaging cup cakes</a></h2>
+<hr>
+<h2><a href="/sint">sums in triangle</a></h2>
+<hr>
+<h2><a href="#">break the code</a></h2>
+<hr>
+<h2><a href="/at1">Atm</a></h2>
+<hr>
+</div>
+<script type="text/javascript">
+	function fun()
+	{
+		window.location.href="ss.htm";
+	}
+</script>>
+</body>
+</html>

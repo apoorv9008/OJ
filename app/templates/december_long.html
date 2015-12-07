@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='flipclock.css') }}" />
+
+  <title>practice</title>
+  <style type="text/css">
+#flattable {
+  display: block;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 115%;
+  overflow: auto;
+  width: auto;}
+  
+  th {
+    background-color: rgb(112, 196, 105);
+    color: white;
+    font-weight: normal;
+    padding: 20px 30px;
+    text-align: center;
+  }
+  td {
+    background-color: rgb(238, 238, 238);
+    color: rgb(111, 111, 111);
+    padding: 20px 30px;
+  }
+
+  #a{
+    margin-top: -50px;
+    margin-left: 850px;
+    border: 2px solid;
+    width: 370px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  body{
+    background-size: 100%;
+  }
+    </style>
+    <script>
+      function myFunction() {
+      location.href="/contestrankings";
+      }
+
+
+    </script>
+<link type="text/css" rel="stylesheet" href="clock_assets/flipclock.css" />
+</head>
+<body background= "{{ url_for('static',filename='finalbc.jpg')}}" onload="setTimeout(myFunction, 300*1000 + 2000)">
+<table id="flattable">
+
+    <tr>
+      <th>Serial no</th>
+      <th>Problem</th>
+      <th>Problem code</th>
+      <th>contest code</th>
+      <th>Submissions</th>
+    </tr>
+    {% for x in arr %}
+    <tr>
+      <td> {{x[0]}}</td>
+      <td><a target = "_blank" href="/{{x[2]}}">{{x[1]}}</td>
+      <td>{{x[2]}}</td>
+      <td>{{contest}}</td>
+      <td>{{x[4]}}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+
+
+  <div id="a">
+  
+<h1> Time Left :</h1>
+<div class="clock-builder-output"></div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='flipclock.js') }}"></script>
+<style text="text/css">body .flip-clock-wrapper ul li a div div.inn, body .flip-clock-small-wrapper ul li a div div.inn { color: #CCCCCC; background-color: #333333; } body .flip-clock-dot, body .flip-clock-small-wrapper .flip-clock-dot { background: #323434; } body .flip-clock-wrapper .flip-clock-meridium a, body .flip-clock-small-wrapper .flip-clock-meridium a { color: #323434; }</style>
+<script type="text/javascript">
+$(function(){
+  FlipClock.Lang.Custom = { days:'Days', hours:'Hours', minutes:'Minutes', seconds:'Seconds' };
+  var opts = {
+    clockFace: 'DailyCounter',
+    countdown: true,
+    language: 'Custom'
+  };
+  opts.classes = {
+    active: 'flip-clock-active',
+    before: 'flip-clock-before',
+    divider: 'flip-clock-divider',
+    dot: 'flip-clock-dot',
+    label: 'flip-clock-label',
+    flip: 'flip',
+    play: 'play',
+    wrapper: 'flip-clock-small-wrapper'
+  };  
+  var countdown = 300;// from: 12/06/2015 03:46 pm +0530
+  countdown = Math.max(1, countdown);
+  $('.clock-builder-output').FlipClock(countdown, opts);
+});
+</script>
+
+
+  </div>
+
+  
+  </body>
+  {% endblock %}
+</html>

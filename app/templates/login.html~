@@ -1,0 +1,18 @@
+<!-- extend from base layout -->
+<!--{% extends "base.html" %}
+-->
+<html>
+<head>
+<body>
+  <h1>Sign In</h1>
+  <form id="form" action="{{ url_for('logedin') }}" method="post" name="login">
+      
+      <p>
+          Enter your ID:<br>
+          <input type="email" id="search1" name="email" placeholder="email@domain.com"><br>
+  <input type="password" id="search1" name="passw" placeholder="Password"><br>
+      </p>
+      <p><input type="submit" value="Sign In" name="sign-in-name"></p>
+  </form>
+</body>
+</html>

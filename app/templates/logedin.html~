@@ -1,0 +1,227 @@
+<html>
+<head>
+<title>DYP ONLINE JUDGE</title>
+ <link rel="stylesheet" type="text/css" href="mystyle.css">
+<style type="text/css">
+
+body{margin:auto;}
+header.head{border:1px solid white;
+	        height:10%;
+	        width:100%;
+	        background-color: black;
+}
+header.head img{margin-left: 140px;
+                margin-top:20px;
+                padding-top: 0px;}
+header.head h2{color:#F54E16;
+	           margin-left: 170px;
+	           margin-top: -23px;
+               }
+header.head p{color:white;
+	          margin-left: 330px;
+	          margin-top: -42px;
+	          font-size: 18px;
+              }	
+p.def{padding-left: 54%;
+       padding-top: 0px;
+       color:#F54E16;}
+nav.mydiv{height:16%;
+          width:100%;
+          background-color: #F54E16;
+           border:1px solid white;}
+
+ul#list-nav {
+  list-style:none;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 20px;
+  padding-left: 45px;
+  width:100%;
+  margin:40px;
+  margin-left: 15%;
+  margin-top: 153px;
+}
+ul#list-nav li {
+  display:inline
+}
+ul#list-nav li a {
+  height:14%;
+  text-decoration:none;
+  padding-top: 0px;
+  padding-bottom:30 px;
+  margin-top: 20px;
+  width:135px;
+  background:#F54E16;
+  font-size: 1.2em;
+  font-family:Futura,Trebuchet MS,Arial,sans-serif;
+  color:#eee;
+  float:left;
+  text-align:center;
+  border-left:1px solid black;
+}
+ul#list-nav li#first a{border-left:1px solid #F54E16;}
+ul#list-nav li#secon a{width:150px;}
+ul#list-nav li a:hover {
+  background:black;
+  color:#F54E16;
+}
+a {
+padding-bottom: 8px;
+}
+ul#list-nav1 {
+  list-style:none;
+  padding-top: -50px;
+  padding-right: 0px;
+  padding-bottom: 20px;
+  padding-left: 45px;
+  width:100%;
+  margin:40px;
+  margin-left:86%;
+  margin-top:-125px;
+}
+/*ul#list-nav1 li {
+  display:inline
+}*/
+ul#list-nav1 li a {
+  height:19%;
+  text-decoration:none;
+  padding-top: 0px;
+  padding-bottom:30 px;
+  margin-top: 125px;
+  width:90px;
+  background:black;
+  font-family:Futura,Trebuchet MS,Arial,sans-serif;
+  color:white;
+  float:left;
+  text-align:center;
+  border-left:1px solid black;
+}
+ul#list-nav1 li#first a{border-left:1px solid #F54E16;}
+ul#list-nav1 li#secon a{width:100px;}
+ul#list-nav1 li a:hover {
+  background:black;
+  color:#F54E16;
+}
+a {
+padding-bottom: 8px;
+}
+section.mysec{height:55%;
+               width:100%;
+               background-color:black;
+               }
+section.mysec p{margin-top: -520px;
+                 margin-left: 160px;
+                 position: absolute;
+                  z-index: 100;
+                  font-size: 36px;
+                  	font-family: Lucida Bright,Georgia,serif;
+                    color:white;}
+ section.mysec1{ position: absolute;
+                  z-index: 100;
+                  font-size: 36px;
+              height:50%;
+               width:28%;
+               background-color:#F54E16;
+               margin-top: -39%;
+               margin-left: 69%;
+              }
+section.mysec1 p{color:white;
+                  margin-top: 20px;
+                  margin-left: 50px;
+
+                  font-size:20px;}
+#search{height:40px;
+         width:340px;
+         margin-top: 60px;
+         margin-left: 20px;
+          text-align: left;
+          font-size: 17px;
+           padding-left: 10px;}
+#search1{height:40px;
+         width:340px;
+         padding-left: 10px;
+         font-size: 17px;
+         text-align: left;
+         margin-top: 7px;
+         margin-left: 20px;
+         }
+#submit1 {
+  list-style:none;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 20px;
+  padding-left: 35px;
+  width:100%;
+  margin:40px;
+  margin-left:0px;
+  margin-top: 20px;
+  background-color: #111111;
+  color: white;
+  
+}
+ul#list-nav2 li {
+  display:inline
+}
+ul#list-nav2 li a {
+  height:26px;
+  text-decoration:none;
+  padding-top: 10px;
+  padding-bottom:30 px;
+  margin-top: 20px;
+  width:340px;
+  background:black;
+  font-family:Futura,Trebuchet MS,Arial,sans-serif;
+  color:#eee;
+  float:left;
+  text-align:center;
+  border-left:1px solid black;
+  font-size: 15px;
+}
+ul#list-nav2 li#first a{border-left:1px solid #F54E16;}
+ul#list-nav2 li#secon a{width:130px;}
+ul#list-nav2 li a:hover {
+  background:black;
+  color:#F54E16;
+}
+a {
+padding-bottom: 8px;
+}
+
+</style>
+</head>
+
+
+
+
+<body>
+	<header class="head">
+		<img src="logo.jpg" width="25px";height="25px";>
+			<h2>DYP ONLINE JUDGE</h2>
+				
+					
+				
+	</header>
+	<nav class="mydiv">
+		
+		<ul id="list-nav1">
+			<li><a href="/login1">{{name}}</a></li>
+			<li><a href="/"> logout</a></li>
+		</ul>
+
+		<ul id="list-nav">
+		  <li id="first"><a href="#">Home</a></li>
+		  <li ><a href="/problems">Practice</a></li>
+		  <li ><a href="/contest">Contests</a></li>
+		  <li id="secon"><a href="#">About DYP OJ</a></li>
+		  <li><a href="#">Contact Us</a></li>
+		</ul>
+	</nav>
+<section class="mysec">
+<img src="{{ url_for('static',filename='back.jpg')}}" width="100%"; height="600px" style="position: relative; z-index: 1;">
+
+<p>First Practice Hard, and then <b>Code</b> and<br>Code Untill  <b>Legends</b> Start Competing You.</p>
+
+</section>
+
+</body>
+</html>

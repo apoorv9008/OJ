@@ -1,0 +1,11 @@
+from flask import Flask
+from dbconnect import connection
+from wtforms import Form, BooleanField, TextField, PasswordField, validators
+from MySQLdb import escape_string as thwart
+app = Flask(__name__)
+@app.route("/")
+def hello():
+	 return render_template("home.html")
+     #return "Username or Password is wrong"
+if __name__ == "__main__":
+    app.run()
