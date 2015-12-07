@@ -14,20 +14,28 @@
   width: auto;}
   
   th {
-    background-color: rgb(112, 196, 105);
+    background-color: rgb(0,38,77);
     color: white;
     font-weight: normal;
     padding: 20px 30px;
     text-align: center;
+    opacity: .9;
   }
   td {
     background-color: rgb(238, 238, 238);
-    color: rgb(111, 111, 111);
+    color: black;
     padding: 20px 30px;
+    opacity: .6;
+  }
+  a{
+    text-decoration: none;
+  }
+  body{
+    background-size: 100%;
   }
     </style>
 </head>
-<body bgcolor="lightgrey">
+<body background= "{{ url_for('static',filename='finalbc.jpg')}}">
 
 
 <table id="flattable">
@@ -39,79 +47,19 @@
       <th>submissions</th>
       <th>difficulty</th>
     </tr>
+    {% set count =1 %}
+    {% for x in arr %}
     <tr>
-      <td>1.</td>
-      <td><a href="/ATM">ATM</td>
-      <td>at1</td>
-      <td>5</td>
-      <td>Easy</td>
+      <td> {{count}}</td>
+      <td>{{x[0]}}</td>
+      <td><a href="/{{x[1]}}">{{x[1]}}</td>
+      
+      <td>{{x[2]}}</td>
+      <td>{{x[3]}}</td>
     </tr>
-     <tr>
-      <td>2.</td>
-      <td><a href="enormous.htm">enormous input test</td>
-      <td>intest</td>
-      <td>6</td>
-      <td>Easy</td>
-    </tr>
-    <tr>
-      <td>3.</td>
-      <td><a href="factorial.htm">factorial</td>
-      <td>factrl</td>
-      <td>9</td>
-      <td>Easy</td>
-    </tr>
-    <tr>
-      <td>4.</td>
-      <td><a href="tsort.htm">Turbo sort</td>
-      <td>tsort</td>
-      <td>4</td>
-      <td>Easy</td>
-    </tr>
-    <tr>
-      <td>5.</td>
-      <td><a href="crecp.htm">cutting Recipes</td>
-      <td>recipe</td>
-      <td>5</td>
-      <td>medium</td>
-    </tr>
-    <tr>
-      <td>6.</td>
-      <td><a href="transform.htm">transform</td>
-      <td>onp</td>
-      <td>3</td>
-      <td>medium</td>
-    </tr>
-    <tr>
-      <td>7.</td>
-      <td><a href="tlg.htm">the lead game</td>
-      <td>tlg</td>
-      <td>6</td>
-      <td>medium</td>
-    </tr>
-    <tr>
-      <td>8.</td>
-      <td><a href="package.htm">packaging cup cakes</td>
-      <td>muffn</td>
-      <td>3</td>
-      <td>hard</td>
-    </tr>
-    <tr>
-      <td>9.</td>
-      <td><a href="sum.htm">sums in triangle</td>
-      <td>sint</td>
-      <td>2</td>
-      <td>hard</td>
-    </tr>
-    <tr>
-      <td>10.</td>
-      <td><a href="break.htm">break the code</td>
-      <td>btc</td>
-      <td>0</td>
-      <td>hard</td>
-    </tr>
-   
-   
-  
+    {% set count= count +1 %}
+    {% endfor %}
+
   </table>
   </body>
   {% endblock %}

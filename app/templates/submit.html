@@ -3,16 +3,56 @@
 <head>
 	<title> Submit </title>
 	<style type="text/css">
-	#hello {
-		height: 650px;
+	#input_code {
+		height: 450px;
 		width: 500px;
+	}
+	#problem_code {
+		height:30px;
+		width:200px;
+	}
+	#problem_language {
+		height:30px;
+		width:200px;
+	}
+	body
+	{
+		background-size: 100%;
+	}
+	span
+	{
+		color: white;
 	}
 	</style>
 </head>
-<body>
+<body background= "{{ url_for('static',filename='finalbc.jpg')}}">
 	<form action="trying" method="post">
-	Submit Your Code :<br> <textarea type="text" name="projectFilepath" id="hello"> Enter Here</textarea> <br>
-	<input type="submit" value="Submit">
+	<span>	Submit Your Code :</span><br> <textarea type="text" name="projectFilepath" id="input_code"> Enter Here</textarea> <br>
+	<span>	Problem Code : </span><br> <textarea type="text" name="problemcode" id="problem_code"> </textarea> <br>
+	<span>	Language : </span><br> <textarea type="text" name="problemlanguage" id="problem_language"> </textarea> <br>
+		<input type="submit" value="Submit">
+		
 	</form>
+
+	<table>
+		<tr>
+			<td><span>Select a File to Load:</span></td>
+			<td><input type="file" id="fileToLoad"></td>
+			<td><button onclick="loadFileAsText()"></span>Load Selected File</span></button><td>
+		</tr>
+	</table>
+
 </body>
 </html>
+
+<script type="text/javascript">
+	function loadFileAsText() {
+		var fileToLoad=document.getElementById('fileToLoad').files[0];
+		var fileReader = new FileReader();
+		fileReader.onload = function(fileLoadedEvent) {
+			var textFromFileLoaded = fileLoadedEvent.target.result;
+			document.getElementById("input_code").value = textFromFileLoaded;
+		};
+		fileReader.readAsText(fileToLoad, "UTF-8");
+	};
+</script>

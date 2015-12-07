@@ -1,10 +1,11 @@
-#!/home/dhruv/Desktop/microblog/flask/bin/python2
-# EASY-INSTALL-ENTRY-SCRIPT: 'coverage==4.0','console_scripts','coverage2'
-__requires__ = 'coverage==4.0'
+#!/home/yogesh/Desktop/OJ/flask/bin/python
+
+# -*- coding: utf-8 -*-
+import re
 import sys
-from pkg_resources import load_entry_point
+
+from coverage.cmdline import main
 
 if __name__ == '__main__':
-    sys.exit(
-        load_entry_point('coverage==4.0', 'console_scripts', 'coverage2')()
-    )
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())
